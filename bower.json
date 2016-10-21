@@ -1,0 +1,10 @@
+{
+  "name": "ux",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-bootstrap-contextmenu": "^0.9.7",
+    "bootstrap": "3.3.4",
+    "jquery": "2.2.4"
+  }
+}
