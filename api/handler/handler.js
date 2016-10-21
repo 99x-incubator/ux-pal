@@ -14,7 +14,7 @@ function dbConnect(cb){
 }
 
 module.exports.register = function(event, cb){
-    var userInfo ={"username":event.username,"password":event.password};
+    var userInfo ={"username":event.username,"password":event.password,"email":event.email};
     dbConnect(function(db){
         var user = db.collection('user');
         user.find({username: event.username})
