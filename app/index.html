@@ -2,56 +2,56 @@
 
 <html ng-app="ux">
 
-    <head>
-		<!-- Google Fonts and Icons-->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
-	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		
-        <style>
-            / This helps the ng-show/ng-hide animations start at the right place. /
-            / Since Angular has this but needs to load, this gives us the class early. /
+<head>
+	<!-- Google Fonts and Icons-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-            .ng-hide {
-                display: none!important;
-            }
+	<style>
+		/ This helps the ng-show/ng-hide animations start at the right place. / / Since Angular has this but needs to load,
+		this gives us the class early. / .ng-hide {
+			display: none!important;
+		}
+	</style>
 
-        </style>
+	<title ng-bind="title"></title>
 
-        <title ng-bind="title"></title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<base href="/">
 
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
-        <base href="/">
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/site.css" />
 
-        <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css"/>
-        <link rel="stylesheet" type="text/css" href="assets/stylesheets/site.css"/>
+	<body layout="column">
 
-        <body layout="column">
+		<ui-view></ui-view>
 
-            <nav class="navbar navbar-default uxpal-navbar">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		<nav class="navbar navbar-default uxpal-navbar">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Brand</a>
-                    </div>
+					<a class="navbar-brand" href="#">Brand</a>
+				</div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
 
-            <div class="container main-container main-container create-project">
-                <div class="fill">
-                 <!--   <div class="row">
+		<div class="container main-container main-container create-project">
+			<div class="fill">
+				<!--   <div class="row">
                       <div class="col-md-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
                         <input type="text" class="create-project-input" placeholder="Project discription">
                       </div>
@@ -61,7 +61,6 @@
                         <div class="col-sm-12 text-center">
                             <button class="btn btn-default create-project-btn" type="button" id="dropdownMenu2">Create New Project</button>
                         </div>
-
                     </div>
                     <div class="row">
                       <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
@@ -71,54 +70,89 @@
                       </div>
                     </div>-->
 
-                    <div class="ux-process">
-                     
-                        <div class="col-md-4 red fluid-box">
+				<div class="ux-process">
 
-                          <h1>Strategy</h1>
-                          <p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-                        </div>
-                        <div class="col-md-4 purple fluid-box ">
-                          <h1>Define</h1>
-                                                   <p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-                        </div>
-                        <div class="col-md-4 deep-blue fluid-box ">
-                          <h1>Ideate</h1>
-                                                   <p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-                        </div>
-                  
-                        <div class="col-md-4 ocean-blue fluid-box">
-                          <h1>Prototype</h1>
-                                                   <p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-                        </div>
-                        <div class="col-md-4 yellow fluid-box">
-                          <h1>Test</h1>
-                                                   <p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-                        </div>
-                        <div class="col-md-4 white fluid-box">
-                          <p>
-                            If You Come trough this process 
-your prodoct will be awesome
-                          </p>
-                        </div>
-                      </div>
-                     
-                    </div>
-                </div>
-            </div>
+					<div class="col-md-4 red fluid-box">
+						<div class="fluid-box-text-wrapper">
+							<h1>Strategy</h1>
+							<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
+						</div>
+					</div>
+					<div class="col-md-4 purple fluid-box ">
+						<div class="fluid-box-text-wrapper">
+							<h1>Define</h1>
+							<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
+						</div>
+					</div>
+					<div class="col-md-4 deep-blue fluid-box ">
+						<div class="fluid-box-text-wrapper">
+							<h1>Ideate</h1>
+							<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
+						</div>
+					</div>
 
-            <!-- Libraries -->
-            <script src="lib/jquery/jquery.js"></script>
-            <script src="lib/angular/angular.js"></script>
-            <!-- Libraries -->
+					<div class="col-md-4 ocean-blue fluid-box">
+						<div class="fluid-box-text-wrapper">
+							<h1>Prototype</h1>
+							<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
+						</div>
+					</div>
+					<div class="col-md-4 yellow fluid-box">
+						<div class="fluid-box-text-wrapper">
+							<h1>Test</h1>
+							<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
+						</div>
+					</div>
+					<div class="col-md-4 white fluid-box">
+						<div class="fluid-box-text-wrapper">
+							<p>
+								If You Come trough this process your prodoct will be awesome
+							</p>
+						</div>
 
-            <!-- App -->
-            <script src="app.module.js"></script>
-            <script src="app.config.js"></script>
+					</div>
+				</div>
 
-            <!-- Core -->
-            <script src="components/core/core.module.js"></script>
-            <script src="components/core/constants.js"></script>
-        </body>
+			</div>
+		</div>
+		</div>
 
-    </html>
+		<!-- Libraries -->
+		<script src="lib/jquery/jquery.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular-ui-router/angular-ui-router.js"></script>
+
+		<!-- App -->
+		<script src="app.module.js"></script>
+		<script src="app.config.js"></script>
+
+		<!-- Core -->
+		<script src="components/core/core.module.js"></script>
+		<script src="components/core/constants.js"></script>
+
+		<!-- Home -->
+		<script src="components/home/home.module.js"></script>
+		<script src="components/home/home.controller.js"></script>
+
+		<!--Dashboard-->
+		<script src="components/dashboard/dashboard.module.js"></script>
+		<script src="components/dashboard/dashboard.controller.js"></script>
+
+		<!--Define-->
+		<script src="components/define/define.module.js"></script>
+		<script src="components/define/define.controller.js"></script>
+
+		<!--Ideate-->
+		<script src="components/ideate/ideate.module.js"></script>
+		<script src="components/ideate/ideate.controller.js"></script>
+
+		<!--Strategy-->
+		<script src="components/strategy/strategy.module.js"></script>
+		<script src="components/strategy/strategy.controller.js"></script>
+
+		<!--Prototype-->
+		<script src="components/prototype/prototype.module.js"></script>
+		<script src="components/prototype/prototype.controller.js"></script>
+	</body>
+
+</html>

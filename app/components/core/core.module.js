@@ -3,6 +3,6 @@
 
   angular
     .module('ux.core', [
-  
+      'ui.router'
     ]);
 })();
