@@ -20,18 +20,20 @@
   <base href="/">
 
   <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="assets/stylesheets/site.css" />
+  <!--<link rel="stylesheet" type="text/css" href="assets/stylesheets/site.css" />-->
   
 
 <body layout="column">
-  
 
-   {{2*2}}
-   
-
+   <!--Happy coding at Hactoberfirst {{2*2}}-->
+   <div ui-view>Loading...</div>
+   <!--<ui-view></ui-view>-->
     <!-- Libraries -->
     <script src="lib/jquery/jquery.js"></script>
     <script src="lib/angular/angular.js"></script>
+
+    <!--Angular UI router-->
+    <script src="lib/angular-ui-router/angular-ui-router.min.js"></script>
     <!-- Libraries -->
 
     <!-- App -->
@@ -42,6 +44,11 @@
     <script src="components/core/core.module.js"></script>
     <script src="components/core/constants.js"></script>
 
+    <!--home-->
+    <script type="text/javascript" src="components/home/home.module.js"></script>
+    <script type="text/javascript" src="components/home/home.controller.js"></script>
+    <script type="text/javascript" src="components/home/home.config.js"></script>
+    
 
 </body>
 

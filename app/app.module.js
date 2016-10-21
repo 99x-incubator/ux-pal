@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module('ux', [
-        'ux.core'
+        'ux.core',
+        'ux.home'
     ]);
 })();
