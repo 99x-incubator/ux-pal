@@ -7,10 +7,9 @@
 
     function appConfig($stateProvider, $locationProvider, $urlRouterProvider) {
 
-        $locationProvider.html5Mode(true);
-        $urlRouterProvider.otherwise('/home/');
+        //$locationProvider.html5Mode(true);
+        //$urlRouterProvider.otherwise('/home/');
         $stateProvider
-    
             .state('home', {
                 url: "/home",
                 templateUrl: '/components/home/home.html'
