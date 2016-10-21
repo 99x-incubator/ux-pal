@@ -33,7 +33,7 @@ html {
     height: 100%;
 
     &.main-container {
-        
+
         padding: 0;
         width: 100%;
         .fill {
@@ -191,26 +191,3 @@ html {
         opacity: 1;
     }
 }
-=======
-$primary-background-color: #ffffff;
-$secondary-background-color: #f4f7f9;
-$primary-border-color:#e3e1e6;
-$standerd-border-width:1px solid;
-$standerd-border:$standerd-border-width $primary-border-color;
-$primary-active-border-color:rgb(63, 81, 181);
-$secondary-border-color:#e5e5e5;
-$primary-font-color:#000000;
-$primary-font-size:12px;
-$header-font-size:13px;
-$header-font-weight:bold;
-$heading-fonts:$primary-font-color $header-font-weight;
-$popup-padding:10px 17px;
-body {
-    margin: 0;
-    padding: 0;
-    /*temporary hack*/
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
->>>>>>> 10d7490e21a08b99708f37d914eaa9039655c6bb
