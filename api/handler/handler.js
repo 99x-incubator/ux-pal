@@ -1,9 +1,44 @@
 'use strict';
-
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-
 var url = 'mongodb://admin:password@ds023593.mlab.com:23593/uxpal';
+
+function dbConnect(cb){
+    MongoClient.connect(url, function (err, db) {
+        if(err){
+            return cb(err);
+        }else{
+            return cb(db);
+        }
+    });
+}
+
+module.exports.register = function(event, cb){
+    var userInfo ={"username":event.username,"password":event.password,"email":event.email};
+    dbConnect(function(db){
+        var user = db.collection('user');
+        user.find({username: event.username})
+        .toArray(function (err, result) {
+          if (err) {
+            return cb(false);
+          }else{
+            if(result.length > 0){
+                return cb({err:false,usernameExists:true});
+            }else{
+                user.insert(userInfo,function(err, result){
+                    if(err){
+                        return cb(err);
+                    }else{
+                        return cb({err:false,usernameExists:false,data:result.ops[0]})
+                    }
+                });
+            }
+          }
+          db.close();
+        }); 
+        
+    });
+};
 
 module.exports.signIn = function(event, cb){
     dbConnect(function(db){
@@ -48,13 +83,3 @@ module.exports.createProject = function(event,cb){
     });
 }
 
-
-function dbConnect(cb){
-    MongoClient.connect(url, function (err, db) {
-        if(err){
-            return cb(err);
-        }else{
-            return cb(db);
-        }
-    });
-}
