@@ -18,6 +18,7 @@ app.get('/createProject',function(req,res){
 
 app.get('/register',function(req,res){
 	route.register(req.body,function(result){
+		console.log(result);
 		return result;
 	});
 });
