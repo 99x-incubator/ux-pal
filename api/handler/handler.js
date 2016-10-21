@@ -14,16 +14,29 @@ function dbConnect(cb){
 }
 
 module.exports.register = function(event, cb){
+    var userInfo ={"username":event.username,"password":event.password};
     dbConnect(function(db){
         var user = db.collection('user');
-        var userInfo = {"username":event.username,"password":event.password};
-        user.insert(userInfo,function(err, result){
-            if(err){
-                return cb(err);
+        user.find({username: event.username})
+        .toArray(function (err, result) {
+          if (err) {
+            return cb(false);
+          }else{
+            if(result.length > 0){
+                return cb({err:false,usernameExists:true});
             }else{
-                return cb({err:false,data:result.ops[0]})
+                user.insert(userInfo,function(err, result){
+                    if(err){
+                        return cb(err);
+                    }else{
+                        return cb({err:false,usernameExists:false,data:result.ops[0]})
+                    }
+                });
             }
-        });
+          }
+          db.close();
+        }); 
+        
     });
 };
 
