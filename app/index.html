@@ -3,74 +3,72 @@
 <html ng-app="ux">
 
 <head>
-  <style>
-    /* This helps the ng-show/ng-hide animations start at the right place. */
-    /* Since Angular has this but needs to load, this gives us the class early. */
-    
-    .ng-hide {
-      display: none!important;
-    }
-  </style>
+	<style>
+		/* This helps the ng-show/ng-hide animations start at the right place. */
+		/* Since Angular has this but needs to load, this gives us the class early. */
+		
+		.ng-hide {
+			display: none!important;
+		}
+	</style>
 
-  <title ng-bind="title"></title>
+	<title ng-bind="title"></title>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <base href="/">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<base href="/">
 
-  <link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="assets/stylesheets/site.css" />
-  
-
-<body layout="column">
-  
-
-   {{2*2}}
-
-   <ui-view></ui-view>
-   
-
-    <!-- Libraries -->
-    <script src="lib/jquery/jquery.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-ui-router/angular-ui-router.js"></script>
-
-    <!-- Libraries -->
-
-    <!-- App -->
-    <script src="app.module.js"></script>
-    <script src="app.config.js"></script>
-
-    <!-- Core -->
-    <script src="components/core/core.module.js"></script>
-    <script src="components/core/constants.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="assets/stylesheets/site.css" />
 
 
-    <!-- Home -->
-    <script src="components/home/home.module.js"></script>
-    <script src="components/home/home.controller.js"></script>
+	<body layout="column">
 
-    <!--Dashboard-->
-    <script src="components/dashboard/dashboard.module.js"></script>
-    <script src="components/dashboard/dashboard.controller.js"></script>
 
-    <!--Define-->
-    <script src="components/define/define.module.js"></script>
-    <script src="components/define/define.controller.js"></script>
+		<ui-view></ui-view>
 
-    <!--Ideate-->
-    <script src="components/ideate/ideate.module.js"></script>
-    <script src="components/ideate/ideate.controller.js"></script>
 
-    <!--Strategy-->
-    <script src="components/strategy/strategy.module.js"></script>
-    <script src="components/strategy/strategy.controller.js"></script>
+		<!-- Libraries -->
+		<script src="lib/jquery/jquery.js"></script>
+		<script src="lib/angular/angular.js"></script>
+		<script src="lib/angular-ui-router/angular-ui-router.js"></script>
 
-    <!--Prototype-->
-    <script src="components/prototype/prototype.module.js"></script>
-    <script src="components/prototype/prototype.controller.js"></script>
+		<!-- Libraries -->
 
-</body>
+		<!-- App -->
+		<script src="app.module.js"></script>
+		<script src="app.config.js"></script>
+
+		<!-- Core -->
+		<script src="components/core/core.module.js"></script>
+		<script src="components/core/constants.js"></script>
+
+
+		<!-- Home -->
+		<script src="components/home/home.module.js"></script>
+		<script src="components/home/home.controller.js"></script>
+
+		<!--Dashboard-->
+		<script src="components/dashboard/dashboard.module.js"></script>
+		<script src="components/dashboard/dashboard.controller.js"></script>
+
+		<!--Define-->
+		<script src="components/define/define.module.js"></script>
+		<script src="components/define/define.controller.js"></script>
+
+		<!--Ideate-->
+		<script src="components/ideate/ideate.module.js"></script>
+		<script src="components/ideate/ideate.controller.js"></script>
+
+		<!--Strategy-->
+		<script src="components/strategy/strategy.module.js"></script>
+		<script src="components/strategy/strategy.controller.js"></script>
+
+		<!--Prototype-->
+		<script src="components/prototype/prototype.module.js"></script>
+		<script src="components/prototype/prototype.controller.js"></script>
+
+	</body>
 
 </html>
