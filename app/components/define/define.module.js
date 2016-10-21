@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('ux.home', [
+  angular.module('ux.define', [
     
   ]);
 })();

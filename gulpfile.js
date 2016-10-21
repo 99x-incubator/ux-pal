@@ -50,8 +50,8 @@ gulp.task('sass', function () {
 // Clean deployment folders
 gulp.task('clean', function () {
   return del([_css + '*.css',
-    _lib + '**',
-    '!' + _lib.replace(/\/$/, "")
+  _lib + '**',
+  '!' + _lib.replace(/\/$/, "")
   ]);
 });
 
@@ -60,7 +60,8 @@ gulp.task('deploy-dev', ['bower:install', 'clean'], function () {
   gulp.src(_bower + 'angular/' + 'angular.js')
     .pipe(gulp.dest(_lib + 'angular/'));
 
- 
+  gulp.src(_bower + 'angular-ui-router/release/' + 'angular-ui-router.js')
+    .pipe(gulp.dest(_lib + 'angular-ui-router/'));
 
   gulp.src(_bower + 'angular-bootstrap-contextmenu/' + 'contextMenu.js')
     .pipe(gulp.dest(_lib + 'angular-bootstrap-contextmenu/'));
@@ -80,6 +81,8 @@ gulp.task('deploy-dev', ['bower:install', 'clean'], function () {
 gulp.task('deploy-release', ['bower:install', 'clean'], function () {
   gulp.src(_bower + 'angular/' + 'angular.min.js')
     .pipe(gulp.dest(_lib + 'angular/'));
+  gulp.src(_bower + 'angular-ui-router/release/' + 'angular-ui-router.min.js')
+    .pipe(gulp.dest(_lib + 'angular-ui-router/'));
 
   gulp.src(_bower + 'angular-bootstrap-contextmenu/' + 'contextMenu.js')
     .pipe(gulp.dest(_lib + 'angular-bootstrap-contextmenu/'));

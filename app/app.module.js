@@ -3,6 +3,11 @@
 
     angular.module('ux', [
         'ux.core',
-        'ux.home'
+        'ux.home',
+        'ux.dashboard',
+        'ux.strategy',
+        'ux.proto',
+        'ux.ideate',
+        'ux.define'
     ]);
 })();

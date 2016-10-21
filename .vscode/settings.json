@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    // Controls the font size in pixels.
+    "editor.fontSize": 13.5,
+
+    // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
+    "files.autoSave": "afterDelay",
+
+    // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
+    "files.autoSaveDelay": 5000
+}

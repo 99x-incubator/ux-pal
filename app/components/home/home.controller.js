@@ -1,12 +1,13 @@
 (function () {
+    'use strict';
 
-	'use strict';
+    angular.
+        module('ux.home').
+        controller('homeCtrl', homeCtrl);
 
-	angular.module('ux.home').controller('HomeController', homeController);
-	homeController.$inject = [];
+    homeCtrl.$inject = ['$scope'];
 
-	function homeController() {
-
-	}
-
-})(angular);
+    function homeCtrl($scope) {
+        
+    }
+})();
