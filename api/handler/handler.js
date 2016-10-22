@@ -34,7 +34,7 @@ module.exports.register = function(event, cb){
                 });
             }
           }
-          db.close();
+          //db.close();
         }); 
         
     });
@@ -54,7 +54,7 @@ module.exports.signIn = function(event, cb){
                 return cb(false);
             }
           }
-          db.close();
+          //db.close();
         }); 
     });
 };
@@ -69,13 +69,14 @@ module.exports.createProject = function(event,cb){
                 var template = result[0];
                 template.projectName = event.projectName;
                 template.projectOwner = event.username;
+                template.projectDescription = event.description;
                 projects.insert(template, function (err, result) {
                   if (err) {
                     return cb(err);
                   } else {
                     return cb({err:false,data:result.ops[0]});
                   }
-                  db.close();
+                  //db.close();
                 });
             }
         })
@@ -96,7 +97,7 @@ module.exports.getProjects = function(event,cb){
                 return cb({err:false,projectExist:false});
             }
           }
-          db.close();
+          //db.close();
         }); 
     });
 }
@@ -116,7 +117,7 @@ module.exports.getProjectData = function(event,cb){
                 return cb({err:false,projectExist:false});
             }
           }
-          db.close();
+          //db.close();
         }); 
     });
 }
@@ -134,7 +135,7 @@ module.exports.updateProject = function(event,cb){
                 } else {
                     return cb({err:false,data:data.ops[0]});
                 }
-                    db.close();
+                    //db.close();
             });
            }
         });
