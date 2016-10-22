@@ -16,6 +16,10 @@
                 controller: "getStartCtrl",
                 controllerAs: "getStartCtrl"
             })
+			.state('login', {
+                url: "/login",
+                templateUrl: '/components/login/login.html'
+            })
             .state('navbar', {
                 url: "/navbar",
                 templateUrl: '/components/navbar/navbar.html'

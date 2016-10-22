@@ -4,6 +4,7 @@
     angular.module('ux', [
         'ux.core',
         'ux.getStart',
+		'ux.login',
         'ux.dashboard',
         'ux.documentList',
         'ux.strategy',
