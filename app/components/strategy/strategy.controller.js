@@ -2,8 +2,8 @@
     'use strict';
 
     angular.
-        module('ux.strategy').
-        controller('strategyCtrl', strategyCtrl);
+    module('ux.strategy').
+    controller('strategyCtrl', strategyCtrl);
 
     strategyCtrl.$inject = ['$scope'];
 
