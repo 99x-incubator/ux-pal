@@ -2,41 +2,47 @@
 var express = require('express');
 var app = express();
 var route = require('./handler/handler');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 /////ENDPOINTS FOR FUNCTIONS//////////////
-app.get('/signIn', function (req,res) {
+app.post('/signIn', function (req,res) {
 	route.signIn(req.body,function(result){
-		return result;
+		res.send(result);
 	})
 });
 
-app.get('/createProject',function(req,res){
+app.post('/createProject',function(req,res){
 	route.createProject(req.body,function(result){
-		return result;
+		res.send(result);
 	});
 })
 
-app.get('/register',function(req,res){
+app.post('/register',function(req,res){
 	route.register(req.body,function(result){
-		return result;
+		res.send(result);
 	});
 });
 
-app.get('/getProjects',function(req,res){
+app.post('/getProjects',function(req,res){
 	route.getProjects(req.body,function(result){
-		return result;
+		res.send(result);
 	});
 });
 
-app.get('/getProjectData',function(req,res){
+app.post('/getProjectData',function(req,res){
 	route.getProjectData(req.body,function(result){
-		return result;
+		res.send(result);
 	});
 });
 
-app.get('/updateProject',function(req,res){
+app.post('/updateProject',function(req,res){
 	route.updateProject(req.body,function(result){
-		return result;
+		res.send(result);
 	});
 });
 
