@@ -14,6 +14,10 @@
                 url: "/getStart",
                 templateUrl: '/components/getStart/getStart.html'
             })
+			.state('login', {
+                url: "/login",
+                templateUrl: '/components/login/login.html'
+            })
             .state('navbar', {
                 // abstract: true,
                 url: "/navbar",
