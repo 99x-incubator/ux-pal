@@ -3,6 +3,8 @@
 
   angular
     .module('ux.core', [
-      'ui.router'
+      'ui.router',
+      'ngAnimate',
+      'toastr'
     ]);
 })();

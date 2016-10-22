@@ -50,8 +50,8 @@ gulp.task('sass', function () {
 // Clean deployment folders
 gulp.task('clean', function () {
   return del([_css + '*.css',
-  _lib + '**',
-  '!' + _lib.replace(/\/$/, "")
+    _lib + '**',
+    '!' + _lib.replace(/\/$/, "")
   ]);
 });
 
@@ -63,11 +63,19 @@ gulp.task('deploy-dev', ['bower:install', 'clean'], function () {
   gulp.src(_bower + 'angular-ui-router/release/' + 'angular-ui-router.js')
     .pipe(gulp.dest(_lib + 'angular-ui-router/'));
 
+  gulp.src(_bower + 'angular-toastr/dist/' + 'angular-toastr.tpls.js')
+    .pipe(gulp.dest(_lib + 'angular-toastr/'));
+  gulp.src(_bower + 'angular-animate/' + 'angular-animate.js')
+    .pipe(gulp.dest(_lib + 'angular-animate/'));
+
   gulp.src(_bower + 'angular-bootstrap-contextmenu/' + 'contextMenu.js')
     .pipe(gulp.dest(_lib + 'angular-bootstrap-contextmenu/'));
 
   gulp.src(_bower + 'bootstrap/dist/js/' + 'bootstrap.js')
     .pipe(gulp.dest(_lib + 'bootstrap/'));
+  gulp.src(_bower + 'angular-toastr/dist/' + 'angular-toastr.css')
+    .pipe(gulp.dest(_css));
+
   gulp.src(_bower + 'bootstrap/dist/css/' + 'bootstrap.css')
     .pipe(gulp.dest(_css));
 
@@ -81,6 +89,12 @@ gulp.task('deploy-dev', ['bower:install', 'clean'], function () {
 gulp.task('deploy-release', ['bower:install', 'clean'], function () {
   gulp.src(_bower + 'angular/' + 'angular.min.js')
     .pipe(gulp.dest(_lib + 'angular/'));
+
+  gulp.src(_bower + 'angular-toastr/dist/' + 'angular-toastr.tpls.min.js')
+    .pipe(gulp.dest(_lib + 'angular-toastr/'));
+  gulp.src(_bower + 'angular-animate/' + 'angular-animate.min.js')
+    .pipe(gulp.dest(_lib + 'angular-animate/'));
+
   gulp.src(_bower + 'angular-ui-router/release/' + 'angular-ui-router.min.js')
     .pipe(gulp.dest(_lib + 'angular-ui-router/'));
 
@@ -90,6 +104,9 @@ gulp.task('deploy-release', ['bower:install', 'clean'], function () {
   gulp.src(_bower + 'bootstrap/dist/js/' + 'bootstrap.min.js')
     .pipe(gulp.dest(_lib + 'bootstrap/'));
   gulp.src(_bower + 'bootstrap/dist/css/' + 'bootstrap.min.css')
+    .pipe(gulp.dest(_css));
+
+  gulp.src(_bower + 'angular-toastr/dist/' + 'angular-toastr.min.css')
     .pipe(gulp.dest(_css));
 
   gulp.src(_bower + 'jquery/dist/' + 'jquery.min.js')
