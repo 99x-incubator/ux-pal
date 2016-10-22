@@ -8,6 +8,6 @@
     dashboardCtrl.$inject = ['$scope'];
 
     function dashboardCtrl($scope) {
-        
+
     }
 })();

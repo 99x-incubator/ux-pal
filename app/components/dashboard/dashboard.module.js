@@ -1,7 +1,6 @@
-(function() {
+(function () {
   'use strict';
 
-  angular.module('ux.dashboard', [
-    
-  ]);
+  angular.module('ux.dashboard', []);
+
 })();
