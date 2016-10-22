@@ -1,6 +1,6 @@
 {
   "name": "ux",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "devDependencies": {
     "bower": "^1.7.7",
@@ -23,11 +23,10 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-	"start": "http-server -p 8000 -c-1 ./app",
+	  "start": "http-server -p 8000 -c-1 ./app",
     "pretest": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1 ./app",
     "test": "karma start karma.conf.js",
     "test-single-run": "karma start karma.conf.js --single-run"
-
   }
 }
