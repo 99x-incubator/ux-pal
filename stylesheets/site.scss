@@ -79,7 +79,7 @@ html {
                 position: relative;
 
                 &.red {
-                    background: #d32f2f;
+                    background: #d81b60;
 
                     &:hover {
                           -webkit-transition: all 1s ease;
@@ -87,7 +87,7 @@ html {
                             -o-transition: all 1s ease;
                             -ms-transition: all 1s ease;
                             transition: all 1s ease;
-                            background-color:#ae2828;
+                            background-color:#c2185b;
                     }
                 }
                 &.purple {
