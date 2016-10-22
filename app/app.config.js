@@ -7,12 +7,17 @@
 
     function appConfig($stateProvider, $locationProvider, $urlRouterProvider) {
 
-        //$locationProvider.html5Mode(true);
+        // $locationProvider.html5Mode(true);
         //$urlRouterProvider.otherwise('/home/');
         $stateProvider
-            .state('home', {
-                url: "/home",
-                templateUrl: '/components/home/home.html'
+            .state('getStart', {
+                url: "/getStart",
+                templateUrl: '/components/getStart/getStart.html'
+            })
+            .state('navbar', {
+                // abstract: true,
+                url: "/navbar",
+                templateUrl: '/components/navbar/navbar.html'
             })
             .state('dashboard', {
                 url: "/dashboard",

@@ -9,8 +9,9 @@
 
 	<style>
 		/* This helps the ng-show/ng-hide animations start at the right place. */
-        /* Since Angular has this but needs to load, this gives us the class early. */ 
-        .ng-hide {
+		/* Since Angular has this but needs to load, this gives us the class early. */
+		
+		.ng-hide {
 			display: none!important;
 		}
 	</style>
@@ -27,9 +28,6 @@
 </head>
 
 <body layout="column">
-
-	<ui-view></ui-view>
-
 	<nav class="navbar navbar-default uxpal-navbar">
 		<div class="container-fluid">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -46,77 +44,12 @@
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
-			<!-- /.navbar-collapse -->
+			<!--.navbar-collapse -->
 		</div>
-		<!-- /.container-fluid -->
+		<!--/.container-fluid -->
 	</nav>
 
-	<div class="container main-container main-container create-project">
-		<div class="fill">
-			<!--   <div class="row">
-                      <div class="col-md-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-                        <input type="text" class="create-project-input" placeholder="Project discription">
-                      </div>
-                      <div class="col-sm-12 text-center">
-                           <textarea class="create-project-textarea" placeholder="Project discription"></textarea>
-                        </div>
-                        <div class="col-sm-12 text-center">
-                            <button class="btn btn-default create-project-btn" type="button" id="dropdownMenu2">Create New Project</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-                          <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                          </p>
-                      </div>
-                    </div>-->
-
-			<div class="ux-process">
-
-				<div class="col-md-4 red fluid-box">
-					<div class="fluid-box-text-wrapper">
-						<h1>Strategy</h1>
-						<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-					</div>
-				</div>
-				<div class="col-md-4 purple fluid-box ">
-					<div class="fluid-box-text-wrapper">
-						<h1>Define</h1>
-						<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-					</div>
-				</div>
-				<div class="col-md-4 deep-blue fluid-box ">
-					<div class="fluid-box-text-wrapper">
-						<h1>Ideate</h1>
-						<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-					</div>
-				</div>
-
-				<div class="col-md-4 ocean-blue fluid-box">
-					<div class="fluid-box-text-wrapper">
-						<h1>Prototype</h1>
-						<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-					</div>
-				</div>
-				<div class="col-md-4 yellow fluid-box">
-					<div class="fluid-box-text-wrapper">
-						<h1>Test</h1>
-						<p>UX design and UX strategy are two different things. When you are doing design, you are creating something. </p>
-					</div>
-				</div>
-				<div class="col-md-4 white fluid-box">
-					<div class="fluid-box-text-wrapper">
-						<p>
-							If You Come trough this process your prodoct will be awesome
-						</p>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
+	<ui-view></ui-view>
 
 	<!-- Libraries -->
 	<script src="lib/jquery/jquery.js"></script>
@@ -132,8 +65,8 @@
 	<script src="components/core/constants.js"></script>
 
 	<!-- Home -->
-	<script src="components/home/home.module.js"></script>
-	<script src="components/home/home.controller.js"></script>
+	<script src="components/getStart/getStart.module.js"></script>
+	<script src="components/getStart/getStart.controller.js"></script>
 
 	<!--Dashboard-->
 	<script src="components/dashboard/dashboard.module.js"></script>
