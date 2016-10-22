@@ -2,12 +2,18 @@
     'use strict';
 
     angular.
-    module('ux.home').
-    controller('homeCtrl', homeCtrl);
+    module('ux.getStart').
+    controller('getStartCtrl', getStartCtrl);
 
-    homeCtrl.$inject = ['$scope'];
+    getStartCtrl.$inject = ['getStartService', '$scope'];
 
-    function homeCtrl($scope) {
+    function getStartCtrl(getStartService, $scope) {
+        $scope.projectName;
+        $scope.projectDescription;
+
+        $scope.createNewProject = function() {
+            getStartService.setprojectDetails($scope.projectName, $scope.projectDescription);
+        }
 
     }
 })();

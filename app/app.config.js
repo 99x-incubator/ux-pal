@@ -12,10 +12,11 @@
         $stateProvider
             .state('getStart', {
                 url: "/getStart",
-                templateUrl: '/components/getStart/getStart.html'
+                templateUrl: '/components/getStart/getStart.html',
+                controller: "getStartCtrl",
+                controllerAs: "getStartCtrl"
             })
             .state('navbar', {
-                // abstract: true,
                 url: "/navbar",
                 templateUrl: '/components/navbar/navbar.html'
             })
@@ -30,6 +31,10 @@
             .state('ideate', {
                 url: "/ideate",
                 templateUrl: '/components/ideate/ideate.html'
+            })
+            .state('documentList', {
+                url: "/documentList",
+                templateUrl: '/components/documentList/documentList.html'
             })
             .state('strategy', {
                 url: "/strategy",

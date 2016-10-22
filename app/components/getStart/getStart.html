@@ -13,13 +13,13 @@
                         <h2>Create New Project</h2>
                     </div>
                     <div class="col-md-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">
-                        <input type="text" class="create-project-input" placeholder="Project discription">
+                        <input ng-model="projectName" type="text" class="create-project-input" placeholder="Project Name">
                     </div>
                     <div class="col-sm-12 text-center">
-                        <textarea class="create-project-textarea" placeholder="Project discription"></textarea>
+                        <textarea ng-model="projectDescription" class="create-project-textarea" placeholder="Project Description"></textarea>
                     </div>
                     <div class="col-sm-12 text-center">
-                        <button class="btn btn-default create-project-btn" type="button" id="dropdownMenu2">Create New Project</button>
+                        <button ng-click="createNewProject()" class="btn btn-default create-project-btn" type="button" id="dropdownMenu2">Create New Project</button>
                     </div>
 
                 </div>

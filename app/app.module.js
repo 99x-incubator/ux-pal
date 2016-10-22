@@ -3,8 +3,9 @@
 
     angular.module('ux', [
         'ux.core',
-        'ux.home',
+        'ux.getStart',
         'ux.dashboard',
+        'ux.documentList',
         'ux.strategy',
         'ux.proto',
         'ux.ideate',
