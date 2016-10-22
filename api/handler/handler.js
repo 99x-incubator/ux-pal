@@ -14,16 +14,29 @@ function dbConnect(cb){
 }
 
 module.exports.register = function(event, cb){
+    var userInfo ={"username":event.username,"password":event.password,"email":event.email};
     dbConnect(function(db){
         var user = db.collection('user');
-        var userInfo = {"username":event.username,"password":event.password};
-        user.insert(userInfo,function(err, result){
-            if(err){
-                return cb(err);
+        user.find({username: event.username})
+        .toArray(function (err, result) {
+          if (err) {
+            return cb(false);
+          }else{
+            if(result.length > 0){
+                return cb({err:false,usernameExists:true});
             }else{
-                return cb({err:false,data:result.ops[0]})
+                user.insert(userInfo,function(err, result){
+                    if(err){
+                        return cb(err);
+                    }else{
+                        return cb({err:false,usernameExists:false,data:result.ops[0]})
+                    }
+                });
             }
-        });
+          }
+          db.close();
+        }); 
+        
     });
 };
 
@@ -48,16 +61,15 @@ module.exports.signIn = function(event, cb){
 
 module.exports.createProject = function(event,cb){
     dbConnect(function(db){
-        var collection = db.collection('projects');
-        collection.find({isTemplate:true}).toArray(function(err,result){
+        var projects = db.collection('projects');
+        projects.find({isTemplate:true},{isTemplate:0,_id:0}).toArray(function(err,result){
             if(err){
                 return cb(err);
             }else{
                 var template = result[0];
-                delete template._id; delete template.isTemplate;
                 template.projectName = event.projectName;
                 template.projectOwner = event.username;
-                collection.insert(template, function (err, result) {
+                projects.insert(template, function (err, result) {
                   if (err) {
                     return cb(err);
                   } else {
@@ -70,3 +82,61 @@ module.exports.createProject = function(event,cb){
     });
 }
 
+module.exports.getProjects = function(event,cb){
+    dbConnect(function(db){
+        var user = db.collection('projects');
+        user.find({projectOwner:event.username},{projectName:1,_id:0})
+        .toArray(function (err, result) {
+          if (err) {
+            return cb(false);
+          }else{
+            if(result.length > 0){
+                return cb({err:false,projectExist:true,data:result[0]});
+            }else{
+                return cb({err:false,projectExist:false});
+            }
+          }
+          db.close();
+        }); 
+    });
+}
+
+module.exports.getProjectData = function(event,cb){
+    dbConnect(function(db){
+        var user = db.collection('projects');
+        user.find({projectName:event.projectName,projectOwner:event.username})
+        .toArray(function (err, result) {
+          if (err) {
+            return cb(false);
+          }else{
+            if(result.length > 0){
+                console.log(result);
+                return cb({err:false,projectExist:true,data:result[0]});
+            }else{
+                return cb({err:false,projectExist:false});
+            }
+          }
+          db.close();
+        }); 
+    });
+}
+
+module.exports.updateProject = function(event,cb){
+    dbConnect(function(db){
+        var projects = db.collection('projects');
+        projects.findAndRemove({"projectName":event.projectName,"projectOwner":event.projectOwner}, function(err, result) {
+           if(err){
+            return cb(err);
+           }else{
+            projects.insert(event, function (err, data) {
+                if (err) {
+                    return cb(err);
+                } else {
+                    return cb({err:false,data:data.ops[0]});
+                }
+                    db.close();
+            });
+           }
+        });
+    });
+}

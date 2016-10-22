@@ -22,6 +22,26 @@ app.get('/register',function(req,res){
 	});
 });
 
+app.get('/getProjects',function(req,res){
+	route.getProjects(req.body,function(result){
+		return result;
+	});
+});
+
+app.get('/getProjectData',function(req,res){
+	route.getProjectData(req.body,function(result){
+		return result;
+	});
+});
+
+app.get('/updateProject',function(req,res){
+	route.updateProject(req.body,function(result){
+		return result;
+	});
+});
+
+
+///////////////////// SERVER /////////////////////
 app.listen(3000,function(){
 	console.log("server running on port 3000...");
 });
