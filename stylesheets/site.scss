@@ -79,7 +79,7 @@ html {
                 position: relative;
 
                 &.red {
-                    background: #d81b60;
+                    background: #d32f2f;
 
                     &:hover {
                           -webkit-transition: all 1s ease;
@@ -87,7 +87,7 @@ html {
                             -o-transition: all 1s ease;
                             -ms-transition: all 1s ease;
                             transition: all 1s ease;
-                            background-color:#c2185b;
+                            background-color:#ae2828;
                     }
                 }
                 &.purple {
@@ -191,3 +191,4 @@ html {
         opacity: 1;
     }
 }
+>>>>>>> 7e5730d9d0a6250a548fa7e415a86a9b3230e9fc
