@@ -1,7 +1,6 @@
-(function() {
+(function () {
   'use strict';
 
-  angular.module('ux.proto', [
-    
-  ]);
+  angular.module('ux.proto', []);
+
 })();
