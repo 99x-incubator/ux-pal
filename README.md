@@ -16,6 +16,7 @@ $ npm run prestart
 $ npm install -g gulp
 $ gulp build-dev
 
+$ npm start
 open `http://localhost:8000`
 ```
 
