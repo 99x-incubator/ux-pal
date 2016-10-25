@@ -18,11 +18,11 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
 
 
-    customLaunchers: {
-        Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-        }
+       customLaunchers: {
+      'PhantomJS_flags': {
+        base: 'PhantomJS',
+        flags: ['--load-images=false']
+      }
     },
 
     plugins: [
