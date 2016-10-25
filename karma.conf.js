@@ -17,19 +17,20 @@ module.exports = function (config) {
 
     browsers: ['Chrome'],
 
+
+    customLaunchers: {
+        Chrome_travis_ci: {
+            base: 'Chrome',
+            flags: ['--no-sandbox']
+        }
+    },
+
     plugins: [
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine',
       'karma-junit-reporter'
     ],
-
-     customLaunchers: {
-        Chrome_travis_ci: {
-            base: 'Chrome',
-            flags: ['--no-sandbox']
-        }
-    },
 
     junitReporter: {
       outputFile: 'test_out/unit.xml',
