@@ -3,7 +3,9 @@ node_js:
   - "6"
 before_install:
   - npm install
-script: npm run travis
+script: 
+  - npm run travis
+  - npm test
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
