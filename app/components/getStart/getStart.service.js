@@ -25,7 +25,7 @@
             }
             var result = $http(req);
             console.log(result);
-            console.log(projectName + "   " + ProjectDescription); //FYI : Avindu two variables to be saved in the backend
+            return result;
         }
 
     }

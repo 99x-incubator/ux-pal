@@ -4,6 +4,7 @@
     angular.module('ux')
         .config(appConfig)
         .run(appRun);
+        angular.module('ux').config(angularToastrConfig);
 
     function appConfig($stateProvider, $locationProvider, $urlRouterProvider) {
 
@@ -49,6 +50,31 @@
                 templateUrl: '/components/prototype/prototype.html'
             });
     }
+
+    function angularToastrConfig(toastrConfig) {
+        angular.extend(toastrConfig, {
+            allowHtml: false,
+            closeButton: false,
+            closeHtml: '<button>&times;</button>',
+            extendedTimeOut: 1000,
+            iconClasses: {
+                error: 'toast-error',
+                info: 'toast-info',
+                success: 'toast-success',
+                warning: 'toast-warning'
+            },
+            messageClass: 'toast-message',
+            onHidden: null,
+            onShown: null,
+            onTap: null,
+            progressBar: false,
+            tapToDismiss: true,
+            positionClass: 'toast-top-right',
+            timeOut: 10000,
+            titleClass: 'toast-title',
+            toastClass: 'toast'
+        });
+    };
 
     function appRun() {
 
