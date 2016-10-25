@@ -1,5 +1,7 @@
 # ux-pal
 
+[![Join the chat at https://gitter.im/ux-pal/Lobby](https://badges.gitter.im/ux-pal/Lobby.svg)](https://gitter.im/ux-pal/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Guided UX process  
 
 Finding a good UX process for your project is not an easy task. People often find it difficult to make a wise decision on how should I start my UX journey in this project, What should I do next, what documents to create etc…
