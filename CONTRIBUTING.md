@@ -205,3 +205,4 @@ reference GitHub issues that this commit **Closes**.
 
 
 [github]: https://github.com/99xt/ux-pal
+[js-style-guide]: https://google.github.io/styleguide/javascriptguide.xml
