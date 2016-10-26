@@ -1,74 +1,207 @@
-# Contributor Covenant Code of Conduct
+# Contributing to ux-pal
 
-## Our Pledge
+We'd love for you to contribute to our source code and to make ux-pal even better than it is
+today! Here are the guidelines we'd like you to follow:
 
-In the interest of fostering an open and welcoming environment, we as
-contributors and maintainers pledge to making participation in our project and
-our community a harassment-free experience for everyone, regardless of age, body
-size, disability, ethnicity, gender identity and expression, level of experience,
-nationality, personal appearance, race, religion, or sexual identity and
-orientation.
+ - [Issues and Bugs](#issue)
+ - [Feature Requests](#feature)
+ - [Submission Guidelines](#submit)
+ - [Coding Rules](#rules)
+ - [Commit Message Guidelines](#commit)
 
-## Our Standards
+## <a name="issue"></a> Found an Issue?
 
-Examples of behavior that contributes to creating a positive environment
-include:
+If you find a bug in the source code or a mistake in the documentation, you can help us by
+submitting an issue to our [GitHub Repository][github]. Even better you can submit a Pull Request
+with a fix.
 
-* Using welcoming and inclusive language
-* Being respectful of differing viewpoints and experiences
-* Gracefully accepting constructive criticism
-* Focusing on what is best for the community
-* Showing empathy towards other community members
+## <a name="feature"></a> Want a Feature?
 
-Examples of unacceptable behavior by participants include:
+You can request a new feature by submitting an issue to our [GitHub Repository][github].
 
-* The use of sexualized language or imagery and unwelcome sexual attention or
-advances
-* Trolling, insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing others' private information, such as a physical or electronic
-  address, without explicit permission
-* Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+## <a name="docs"></a> Want a Doc Fix?
 
-## Our Responsibilities
+If you want to help improve the docs, it's a good idea to let others know what you're working on to
+minimize duplication of effort. Create a new issue (or comment on a related existing one) to let
+others know what you're working on.
 
-Project maintainers are responsible for clarifying the standards of acceptable
-behavior and are expected to take appropriate and fair corrective action in
-response to any instances of unacceptable behavior.
+For large fixes, please build and test the documentation before submitting the PR to be sure you
+haven't accidentally introduced any layout or formatting issues. You should also make sure that your
+commit message starts with "docs" and follows the **[Commit Message Guidelines](#commit)** outlined
+below.
 
-Project maintainers have the right and responsibility to remove, edit, or
-reject comments, commits, code, wiki edits, issues, and other contributions
-that are not aligned to this Code of Conduct, or to ban temporarily or
-permanently any contributor for other behaviors that they deem inappropriate,
-threatening, offensive, or harmful.
+If you're just making a small change, don't worry about filing an issue first. Use the friendly blue
+"Improve this doc" button at the top right of the doc page to fork the repository in-place and make
+a quick change on the fly. When naming the commit, it is advised to follow the commit message
+guidelines below, by starting the commit message with **docs** and referencing the filename. Since
+this is not obvious and some changes are made on the fly, this is not strictly necessary and we will
+understand if this isn't done the first few times.
 
-## Scope
+### Submitting an Issue
 
-This Code of Conduct applies both within project spaces and in public spaces
-when an individual is representing the project or its community. Examples of
-representing a project or community include using an official project e-mail
-address, posting via an official social media account, or acting as an appointed
-representative at an online or offline event. Representation of a project may be
-further defined and clarified by project maintainers.
+Before you submit your issue search the archive, maybe your question was already answered.
 
-## Enforcement
+If your issue appears to be a bug, and hasn't been reported, open a new issue. Help us to maximize
+the effort we can spend fixing issues and adding new features, by not reporting duplicate issues.
+Providing the following information will increase the chances of your issue being dealt with
+quickly:
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported by contacting the project team at charithsoori@gmail.com. All
-complaints will be reviewed and investigated and will result in a response that
-is deemed necessary and appropriate to the circumstances. The project team is
-obligated to maintain confidentiality with regard to the reporter of an incident.
-Further details of specific enforcement policies may be posted separately.
+* **Overview of the Issue** - if an error is being thrown a non-minified stack trace helps
+* **Motivation for or Use Case** - explain why this is a bug for you
+* **Browsers and Operating System** - is this a problem with all browsers or only specific ones?
+* **Reproduce the Error** - provide a live example (using [Plunker][plunker] or
+  [JSFiddle][jsfiddle]) or an unambiguous set of steps.
+* **Related Issues** - has a similar issue been reported before?
+* **Suggest a Fix** - if you can't fix the bug yourself, perhaps you can point to what might be
+  causing the problem (line of code or commit)
 
-Project maintainers who do not follow or enforce the Code of Conduct in good
-faith may face temporary or permanent repercussions as determined by other
-members of the project's leadership.
+**If you get help, help others.**
 
-## Attribution
+### Submitting a Pull Request
+Before you submit your pull request consider the following guidelines:
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage], version 1.4,
-available at [http://contributor-covenant.org/version/1/4][version]
+* Search [GitHub](https://github.com/99xt/ux-pal/pulls) for an open or closed Pull Request
+  that relates to your submission. You don't want to duplicate effort.
+* Make your changes in a new git branch:
 
-[homepage]: http://contributor-covenant.org
-[version]: http://contributor-covenant.org/version/1/4/
+    ```shell
+    git checkout -b my-fix-branch master
+    ```
+
+* Create your patch.
+* Follow our [Coding Rules](#rules).
+* Commit your changes using a descriptive commit message that follows our
+  [commit message conventions](#commit) and passes our commit message presubmit hook
+  (`validate-commit-msg.js`). Adherence to the [commit message conventions](#commit) is required,
+  because release notes are automatically generated from these messages.
+
+    ```shell
+    git commit -a
+    ```
+  Note: the optional commit `-a` command line option will automatically "add" and "rm" edited files.
+
+* Push your branch to GitHub:
+
+    ```shell
+    git push origin my-fix-branch
+    ```
+
+In GitHub, send a pull request to `99xt:master`.
+If we suggest changes, then:
+
+* Make the required updates.
+* Commit your changes to your branch (e.g. `my-fix-branch`).
+* Push the changes to your GitHub repository (this will update your Pull Request).
+
+If the PR gets too outdated we may ask you to rebase and force push to update the PR:
+
+```shell
+git rebase master -i
+git push origin my-fix-branch -f
+```
+
+_WARNING: Squashing or reverting commits and force-pushing thereafter may remove GitHub comments
+on code that were previously made by you or others in your commits. Avoid any form of rebasing
+unless necessary._
+
+That's it! Thank you for your contribution!
+
+#### After your pull request is merged
+
+After your pull request is merged, you can safely delete your branch and pull the changes
+from the main (upstream) repository:
+
+* Delete the remote branch on GitHub either through the GitHub web UI or your local shell as follows:
+
+    ```shell
+    git push origin --delete my-fix-branch
+    ```
+
+* Check out the master branch:
+
+    ```shell
+    git checkout master -f
+    ```
+
+* Delete the local branch:
+
+    ```shell
+    git branch -D my-fix-branch
+    ```
+
+* Update your master with the latest upstream version:
+
+    ```shell
+    git pull --ff upstream master
+    ```
+
+## <a name="rules"></a> Coding Rules
+
+To ensure consistency throughout the source code, keep these rules in mind as you are working:
+
+* We follow the rules contained in [Google's JavaScript Style Guide][js-style-guide]:
+
+## <a name="commit"></a> Git Commit Guidelines
+
+We have very precise rules over how our git commit messages can be formatted.  This leads to **more
+readable messages** that are easy to follow when looking through the **project history**.
+
+The commit message formatting can be added using a typical git workflow or through the use of a CLI wizard ([Commitizen](https://github.com/commitizen/cz-cli)). To use the wizard, run `npm run commit` in your terminal after staging your changes in git.
+
+### Commit Message Format
+Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
+format that includes a **type**, a **scope** and a **subject**:
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+The **header** is mandatory and the **scope** of the header is optional.
+
+Any line of the commit message cannot be longer 100 characters! This allows the message to be easier
+to read on GitHub as well as in various git tools.
+
+### Revert
+If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
+
+### Type
+Must be one of the following:
+
+* **feat**: A new feature
+* **fix**: A bug fix
+* **docs**: Documentation only changes
+* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing
+  semi-colons, etc)
+* **refactor**: A code change that neither fixes a bug nor adds a feature
+* **perf**: A code change that improves performance
+* **test**: Adding missing tests
+* **chore**: Changes to the build process or auxiliary tools and libraries such as documentation
+  generation
+
+### Scope
+The scope could be anything specifying place of the commit change. For example `$location`,
+`$browser`, `$compile`, `$rootScope`, `ngHref`, `ngClick`, `ngView`, etc...
+
+### Subject
+The subject contains succinct description of the change:
+
+* use the imperative, present tense: "change" not "changed" nor "changes"
+* don't capitalize first letter
+* no dot (.) at the end
+
+### Body
+Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
+The body should include the motivation for the change and contrast this with previous behavior.
+
+### Footer
+The footer should contain any information about **Breaking Changes** and is also the place to
+reference GitHub issues that this commit **Closes**.
+
+**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+
+
+[github]: https://github.com/99xt/ux-pal
