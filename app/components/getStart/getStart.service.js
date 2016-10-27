@@ -24,7 +24,6 @@
                 }
             }
             var result = $http(req);
-            console.log(result);
             return result;
         }
 

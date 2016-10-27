@@ -5,9 +5,9 @@
     module('ux.getStart').
     controller('getStartCtrl', getStartCtrl);
 
-    getStartCtrl.$inject = ['getStartService', '$scope', 'toastr', '$state'];
+    getStartCtrl.$inject = ['getStartService', '$scope', 'toastr', '$state', 'localStorageService'];
 
-    function getStartCtrl(getStartService, $scope, toastr, $state) {
+    function getStartCtrl(getStartService, $scope, toastr, $state, localStorageService) {
         $scope.projectName;
         $scope.projectDescription;
 
@@ -16,7 +16,8 @@
             serverSuccessData.then(function(response) {
                 console.log(response);
                 toastr.success("Project created succesfully");
-                $state.go('documentList');
+                localStorageService.setprojectDetails(response);
+                $state.go('dashboard');
             }).catch(function(error) {
                 console.log(error);
                 toastr.error("Couldn't create a project succesfully. Try again later!");
